@@ -25,4 +25,29 @@ int main(void)
             break;
         }
     }
+     // Allocate space for number
+     node *n = malloc(sizeof(node));
+     if (!n)
+     {
+         return 1;
+     }
+
+     // Add number to list
+     n->number = number;
+     n->next = NULL;
+     if (numbers)
+     {
+         for (node *ptr = numbers; ptr != NULL; ptr = ptr->next)
+         {
+             if (!ptr->next)
+             {
+                 ptr->next = n;
+                 break;
+             }
+         }
+     }
+     else
+     {
+         numbers = n;
+     }
 }
