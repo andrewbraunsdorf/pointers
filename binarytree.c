@@ -132,6 +132,12 @@ void freeList(NODE *curNode)
         return;
     }
 
+
+    freeList(curNode->low);
+
+
+    printf("\n Deleting node: %d", curNode->value);
+    free(curNode);
 }
 
 void tests()
